@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+       <width>783</width>
+       <height>644</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RiskR - Risk Play Detection Software</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+       <item row="15" column="3">
+           <widget class="QPushButton" name="pred_file_btn">
+               <property name="enabled">
+                   <bool>false</bool>
+               </property>
+               <property name="text">
+                   <string>Upload Data to Analyse</string>
+               </property>
+           </widget>
+       </item>
+       <item row="15" column="1" colspan="2">
+           <widget class="QLabel" name="pred_file_path">
+               <property name="font">
+                   <font>
+                       <italic>true</italic>
+                   </font>
+               </property>
+               <property name="text">
+                   <string/>
+               </property>
+           </widget>
+       </item>
+       <item row="26" column="1" colspan="3">
+           <widget class="Line" name="line">
+               <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+               </property>
+           </widget>
+       </item>
+       <item row="1" column="0" colspan="4">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Problematic Gambling Detection Software</string>
+      </property>
+         <property name="alignment">
+             <set>Qt::AlignCenter</set>
+         </property>
+     </widget>
+    </item>
+       <item row="6" column="0">
+           <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+           <weight>75</weight>
+           <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+          <string>Current Player Descriptions Data:</string>
+      </property>
+     </widget>
+    </item>
+       <item row="29" column="0">
+           <widget class="QPushButton" name="clear_results_btn">
+               <property name="enabled">
+                   <bool>false</bool>
+               </property>
+               <property name="text">
+                   <string>Clear Results</string>
+               </property>
+           </widget>
+       </item>
+       <item row="6" column="1" colspan="2">
+           <widget class="QLabel" name="desc_file_path_label">
+               <property name="font">
+                   <font>
+                       <italic>true</italic>
+                   </font>
+               </property>
+      <property name="text">
+          <string/>
+      </property>
+     </widget>
+    </item>
+       <item row="8" column="0">
+           <widget class="QLabel" name="label_2">
+               <property name="font">
+                   <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                   </font>
+               </property>
+               <property name="text">
+                   <string>Current RG Acts Data:</string>
+               </property>
+           </widget>
+       </item>
+       <item row="26" column="0">
+           <widget class="QPushButton" name="show_results_btn">
+      <property name="enabled">
+          <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+          <string>Show Results</string>
+      </property>
+           </widget>
+       </item>
+       <item row="29" column="3">
+           <widget class="QPushButton" name="save_results_btn">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+               <property name="styleSheet">
+                   <string notr="true"/>
+      </property>
+               <property name="text">
+                   <string>Save Results</string>
+      </property>
+     </widget>
+    </item>
+       <item row="17" column="0">
+           <widget class="QComboBox" name="result_type_combo">
+               <property name="enabled">
+                   <bool>false</bool>
+      </property>
+               <item>
+                   <property name="text">
+                       <string>Best AUROC</string>
+                   </property>
+               </item>
+               <item>
+                   <property name="text">
+                       <string>Best Overall Accuracy</string>
+                   </property>
+               </item>
+               <item>
+                   <property name="text">
+                       <string>Best Sensitivity</string>
+                   </property>
+               </item>
+               <item>
+                   <property name="text">
+                       <string>Best Specificity</string>
+                   </property>
+               </item>
+           </widget>
+       </item>
+       <item row="9" column="1" colspan="2">
+           <widget class="QProgressBar" name="process_progress_bar">
+               <property name="enabled">
+                   <bool>false</bool>
+               </property>
+               <property name="value">
+                   <number>0</number>
+               </property>
+               <property name="textVisible">
+                   <bool>true</bool>
+               </property>
+           </widget>
+       </item>
+       <item row="7" column="3">
+           <widget class="QPushButton" name="change_activity_data_btn">
+               <property name="enabled">
+                   <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                   <string notr="true"/>
+               </property>
+               <property name="text">
+                   <string>Change Activity Data Set</string>
+               </property>
+     </widget>
+    </item>
+       <item row="8" column="3">
+           <widget class="QPushButton" name="change_rg_data_btn">
+               <property name="enabled">
+                   <bool>true</bool>
+               </property>
+               <property name="text">
+                   <string>Change RG Data Set</string>
+               </property>
+           </widget>
+       </item>
+       <item row="12" column="0" colspan="4">
+           <widget class="Line" name="line_2">
+               <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+               </property>
+           </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+           <widget class="QLabel" name="rg_file_path_label">
+               <property name="font">
+                   <font>
+                       <italic>true</italic>
+                   </font>
+      </property>
+      <property name="text">
+          <string/>
+      </property>
+           </widget>
+       </item>
+       <item row="7" column="1" colspan="2">
+           <widget class="QLabel" name="act_file_path_label">
+               <property name="font">
+                   <font>
+                       <italic>true</italic>
+                   </font>
+               </property>
+               <property name="text">
+                   <string/>
+               </property>
+           </widget>
+       </item>
+       <item row="3" column="2">
+           <widget class="QRadioButton" name="train_models">
+               <property name="text">
+                   <string>Train Models with own Data</string>
+               </property>
+           </widget>
+       </item>
+       <item row="4" column="0" colspan="4">
+           <widget class="Line" name="line_3">
+               <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+       <item row="13" column="0" colspan="4">
+           <widget class="QTextEdit" name="results_box">
+               <property name="enabled">
+                   <bool>true</bool>
+               </property>
+           </widget>
+       </item>
+       <item row="7" column="0">
+           <widget class="QLabel" name="current_data_label">
+               <property name="font">
+                   <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                   </font>
+               </property>
+               <property name="text">
+                   <string>Current Player Activity Data:</string>
+               </property>
+           </widget>
+       </item>
+       <item row="27" column="0" colspan="4">
+           <widget class="QTextEdit" name="pred_results_box">
+               <property name="enabled">
+                   <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                   <string notr="true"/>
+               </property>
+           </widget>
+       </item>
+       <item row="9" column="3">
+           <widget class="QPushButton" name="train_test_result_btn">
+               <property name="text">
+                   <string>Show Train/Test Results</string>
+               </property>
+           </widget>
+       </item>
+       <item row="9" column="0">
+           <widget class="QPushButton" name="start_train_process_btn">
+               <property name="styleSheet">
+                   <string notr="true"/>
+               </property>
+               <property name="text">
+                   <string>Train the Models</string>
+               </property>
+           </widget>
+       </item>
+       <item row="3" column="1">
+           <widget class="QRadioButton" name="pretrained">
+               <property name="text">
+                   <string>Pre-Trained Models</string>
+               </property>
+           </widget>
+       </item>
+       <item row="6" column="3">
+           <widget class="QPushButton" name="change_desc_data_btn">
+               <property name="text">
+                   <string>Change Player Descriptions Data Set</string>
+               </property>
+           </widget>
+       </item>
+       <item row="17" column="1" colspan="3">
+           <widget class="QPushButton" name="start_pred">
+               <property name="enabled">
+                   <bool>false</bool>
+               </property>
+               <property name="text">
+                   <string>Analyse</string>
+               </property>
+           </widget>
+       </item>
+       <item row="14" column="0" colspan="4">
+           <widget class="Line" name="line_4">
+               <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+               </property>
+           </widget>
+       </item>
+       <item row="15" column="0">
+           <widget class="QLabel" name="pred_file_label">
+               <property name="font">
+                   <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                   </font>
+               </property>
+               <property name="text">
+                   <string>Data Set to Analyse:</string>
+               </property>
+           </widget>
+       </item>
+       <item row="16" column="0">
+           <widget class="QLabel" name="id_data_label">
+               <property name="enabled">
+                   <bool>true</bool>
+               </property>
+               <property name="font">
+                   <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                   </font>
+               </property>
+               <property name="text">
+                   <string>IDs Data Set (For Prediction):</string>
+               </property>
+           </widget>
+       </item>
+       <item row="16" column="3">
+           <widget class="QPushButton" name="id_file_btn">
+               <property name="enabled">
+                   <bool>false</bool>
+               </property>
+               <property name="text">
+                   <string>Upload IDs Data</string>
+               </property>
+           </widget>
+       </item>
+       <item row="16" column="1" colspan="2">
+           <widget class="QLabel" name="id_file_path">
+               <property name="font">
+                   <font>
+                       <italic>true</italic>
+                   </font>
+               </property>
+               <property name="text">
+                   <string/>
+               </property>
+           </widget>
+       </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+        <width>783</width>
+        <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+       <widget class="QMenu" name="menuImport_Data">
+           <property name="title">
+               <string>Import Data</string>
+           </property>
+           <addaction name="actionImport_Player_Descriptions_Data_Set"/>
+           <addaction name="actionImport_Player_Activity_Data"/>
+           <addaction name="actionImport_Player_RG_Events_Data_Set"/>
+           <addaction name="separator"/>
+           <addaction name="actionImport_Data_Set_to_Predict"/>
+           <addaction name="actionImport_IDs_Data_Set"/>
+       </widget>
+       <addaction name="menuImport_Data"/>
+    <addaction name="actionExport_Results"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit_Application"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHow_to_Use"/>
+    <addaction name="separator"/>
+    <addaction name="actionThe_Algorithms"/>
+   </widget>
+   <widget class="QMenu" name="menuPreferences">
+    <property name="title">
+     <string>Preferences</string>
+    </property>
+    <widget class="QMenu" name="menuThemes">
+     <property name="title">
+      <string>Themes</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionClassic_Gray"/>
+     <addaction name="actionDark_Orange"/>
+        <addaction name="actionDark_Blue"/>
+    </widget>
+    <addaction name="menuThemes"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPreferences"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExport_Results">
+      <property name="enabled">
+          <bool>false</bool>
+      </property>
+   <property name="text">
+    <string>Export Results</string>
+   </property>
+   <property name="statusTip">
+    <string>Save Results to File</string>
+   </property>
+  </action>
+  <action name="actionExit_Application">
+   <property name="text">
+    <string>Exit Application</string>
+   </property>
+   <property name="statusTip">
+    <string>Close the Application.</string>
+   </property>
+  </action>
+  <action name="actionHow_to_Use">
+   <property name="text">
+    <string>How to Use</string>
+   </property>
+  </action>
+  <action name="actionThe_Algorithms">
+   <property name="text">
+    <string>How it Works</string>
+   </property>
+  </action>
+  <action name="actionAbout_the_Application">
+   <property name="text">
+    <string>About the Application</string>
+   </property>
+  </action>
+  <action name="actionAbout_the_Developer">
+   <property name="text">
+    <string>About the Developer</string>
+   </property>
+  </action>
+  <action name="actionClassic_Gray">
+   <property name="text">
+    <string>Classic Gray</string>
+   </property>
+  </action>
+  <action name="actionDark_Orange">
+   <property name="text">
+    <string>Dark Orange</string>
+   </property>
+  </action>
+     <action name="actionImport_Player_Activity_Data">
+         <property name="text">
+             <string>Import Player Activity Data Set</string>
+         </property>
+     </action>
+     <action name="actionImport_Player_RG_Events_Data_Set">
+         <property name="text">
+             <string>Import Player RG Events Data Set</string>
+         </property>
+     </action>
+     <action name="actionImport_Player_Descriptions_Data_Set">
+         <property name="text">
+             <string>Import Player Descriptions Data Set</string>
+         </property>
+     </action>
+     <action name="actionDark_Blue">
+         <property name="text">
+             <string>Gradient Dark Orange</string>
+         </property>
+     </action>
+     <action name="actionImport_Data_Set_to_Predict">
+         <property name="enabled">
+             <bool>false</bool>
+         </property>
+         <property name="text">
+             <string>Import Data Set to Analyse</string>
+         </property>
+     </action>
+     <action name="actionImport_IDs_Data_Set">
+         <property name="enabled">
+             <bool>false</bool>
+         </property>
+         <property name="text">
+             <string>Import IDs Data Set</string>
+         </property>
+     </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
